@@ -1,0 +1,34 @@
+{"level":"INFO","timestamp":"2026-09-22T23:20:59.684371","namespace":"mcp_agent.core.context","message":"Configuring logger with level: info"}
+{"level":"INFO","timestamp":"2026-09-22T23:20:59.714932","namespace":"mcp_agent.my_first_agent","message":"Loading subagents from configuration..."}
+{"level":"INFO","timestamp":"2026-09-22T23:20:59.715383","namespace":"mcp_agent.my_first_agent","message":"MCPApp initialized","data":{"data":{"progress_action":"Running","target":"my_first_agent","agent_name":"mcp_application_loop","session_id":"1d9907bd-a9df-45ec-960c-19e254752fbc"}}}
+{"level":"INFO","timestamp":"2026-09-22T23:20:59.725567","namespace":"mcp_agent.mcp.mcp_connection_manager","message":"Disconnecting all persistent server connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:20:59.725041","namespace":"mcp_agent.mcp.mcp_aggregator.assistant","message":"Last aggregator closing, shutting down all persistent connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:26:14.435633","namespace":"mcp_agent.core.context","message":"Configuring logger with level: info"}
+{"level":"INFO","timestamp":"2026-09-22T23:26:14.488264","namespace":"mcp_agent.my_first_agent","message":"Loading subagents from configuration..."}
+{"level":"INFO","timestamp":"2026-09-22T23:26:14.489093","namespace":"mcp_agent.my_first_agent","message":"MCPApp initialized","data":{"data":{"progress_action":"Running","target":"my_first_agent","agent_name":"mcp_application_loop","session_id":"5a82d266-79c9-4a1d-b0fb-ac9b3c7377a1"}}}
+{"level":"ERROR","timestamp":"2026-09-22T23:26:14.607546","namespace":"mcp_agent.executor.executor","message":"Error executing task: Error code: 404 - {'error': {'message': 'No active credentials for provider: openai', 'type': 'invalid_request_error', 'code': 'model_not_found'}}"}
+{"level":"ERROR","timestamp":"2026-09-22T23:26:14.607724","namespace":"mcp_agent.workflows.llm.augmented_llm_openai.assistant","message":"Error: Error code: 404 - {'error': {'message': 'No active credentials for provider: openai', 'type': 'invalid_request_error', 'code': 'model_not_found'}}"}
+{"level":"INFO","timestamp":"2026-09-22T23:26:14.608320","namespace":"mcp_agent.mcp.mcp_aggregator.assistant","message":"Last aggregator closing, shutting down all persistent connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:26:14.608745","namespace":"mcp_agent.mcp.mcp_connection_manager","message":"Disconnecting all persistent server connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:36:11.181481","namespace":"mcp_agent.core.context","message":"Configuring logger with level: info"}
+{"level":"INFO","timestamp":"2026-09-22T23:36:11.232687","namespace":"mcp_agent.my_first_agent","message":"Loading subagents from configuration..."}
+{"level":"INFO","timestamp":"2026-09-22T23:36:11.233424","namespace":"mcp_agent.my_first_agent","message":"MCPApp initialized","data":{"data":{"progress_action":"Running","target":"my_first_agent","agent_name":"mcp_application_loop","session_id":"2602f203-b9a0-4711-88e0-17a5749d0ec9"}}}
+{"level":"ERROR","timestamp":"2026-09-22T23:36:11.370993","namespace":"mcp_agent.executor.executor","message":"Error executing task: Error code: 404 - {'error': {'message': 'No active credentials for provider: gemini', 'type': 'invalid_request_error', 'code': 'model_not_found'}}"}
+{"level":"ERROR","timestamp":"2026-09-22T23:36:11.371116","namespace":"mcp_agent.workflows.llm.augmented_llm_openai.assistant","message":"Error: Error code: 404 - {'error': {'message': 'No active credentials for provider: gemini', 'type': 'invalid_request_error', 'code': 'model_not_found'}}"}
+{"level":"INFO","timestamp":"2026-09-22T23:36:11.371651","namespace":"mcp_agent.mcp.mcp_aggregator.assistant","message":"Last aggregator closing, shutting down all persistent connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:36:11.371942","namespace":"mcp_agent.mcp.mcp_connection_manager","message":"Disconnecting all persistent server connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:40:21.333791","namespace":"mcp_agent.core.context","message":"Configuring logger with level: info"}
+{"level":"INFO","timestamp":"2026-09-22T23:40:21.379518","namespace":"mcp_agent.my_first_agent","message":"Loading subagents from configuration..."}
+{"level":"INFO","timestamp":"2026-09-22T23:40:21.380235","namespace":"mcp_agent.my_first_agent","message":"MCPApp initialized","data":{"data":{"progress_action":"Running","target":"my_first_agent","agent_name":"mcp_application_loop","session_id":"50396331-c176-4005-81cb-e9c97fb4dbb3"}}}
+{"level":"INFO","timestamp":"2026-09-22T23:40:30.979590","namespace":"mcp_agent.mcp.mcp_connection_manager","message":"Disconnecting all persistent server connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:40:30.979160","namespace":"mcp_agent.mcp.mcp_aggregator.assistant","message":"Last aggregator closing, shutting down all persistent connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:41:10.517228","namespace":"mcp_agent.core.context","message":"Configuring logger with level: info"}
+{"level":"INFO","timestamp":"2026-09-22T23:41:10.553124","namespace":"mcp_agent.my_first_agent","message":"Loading subagents from configuration..."}
+{"level":"INFO","timestamp":"2026-09-22T23:41:10.553561","namespace":"mcp_agent.my_first_agent","message":"MCPApp initialized","data":{"data":{"progress_action":"Running","target":"my_first_agent","agent_name":"mcp_application_loop","session_id":"972b74e0-822c-44b5-9c22-13ff98170415"}}}
+{"level":"INFO","timestamp":"2026-09-22T23:42:22.162212","namespace":"mcp_agent.mcp.mcp_aggregator.assistant","message":"Last aggregator closing, shutting down all persistent connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:42:22.162498","namespace":"mcp_agent.mcp.mcp_connection_manager","message":"Disconnecting all persistent server connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:52:22.827970","namespace":"mcp_agent.core.context","message":"Configuring logger with level: info"}
+{"level":"INFO","timestamp":"2026-09-22T23:52:22.884466","namespace":"mcp_agent.file_and_command_agent","message":"Loading subagents from configuration..."}
+{"level":"INFO","timestamp":"2026-09-22T23:52:22.885217","namespace":"mcp_agent.file_and_command_agent","message":"MCPApp initialized","data":{"data":{"progress_action":"Running","target":"file_and_command_agent","agent_name":"mcp_application_loop","session_id":"7a2f6208-02ad-457d-94c0-0ad4deb0fbed"}}}
+{"level":"INFO","timestamp":"2026-09-22T23:52:36.363345","namespace":"mcp_agent.mcp.mcp_aggregator.system_assistant","message":"Last aggregator closing, shutting down all persistent connections..."}
+{"level":"INFO","timestamp":"2026-09-22T23:52:36.363767","namespace":"mcp_agent.mcp.mcp_connection_manager","message":"Disconnecting all persistent server connections..."}

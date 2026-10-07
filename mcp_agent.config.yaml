@@ -1,0 +1,16 @@
+execution_engine: "asyncio"
+logger:
+  transports: [console, file]
+  level: info
+
+openai:
+  default_model: "gemini-3.6-flash"
+
+mcp:
+  servers:
+    fetch:
+      command: "uvx"
+      args: ["mcp-server-fetch"]
+    filesystem:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-filesystem", "."]

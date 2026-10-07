@@ -141,8 +141,8 @@ class OpenAIAugmentedLLM(
             if hasattr(self.context.config.openai, "reasoning_effort"):
                 self._reasoning_effort = self.context.config.openai.reasoning_effort
 
-        self._reasoning = lambda model: model and model.startswith(
-            ("o1", "o3", "o4", "gpt-5")
+        self._reasoning = lambda model: (
+            model and model.startswith(("o1", "o3", "o4", "gpt-5"))
         )
 
         if self._reasoning(default_model):
@@ -461,6 +461,18 @@ class OpenAIAugmentedLLM(
             res = "\n".join(final_text)
             span.set_attribute("response", res)
             return res
+
+    async def generate_stream(
+        self,
+        message,
+        request_params: RequestParams | None = None,
+    ):
+        """
+        Stream LLM generation events using OpenAI API.
+        """
+        raise NotImplementedError(
+            "Streaming for OpenAIAugmentedLLM is not yet implemented."
+        )
 
     async def generate_structured(
         self,
