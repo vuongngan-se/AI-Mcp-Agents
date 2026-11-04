@@ -1,0 +1,49 @@
+[Unit]
+Description=Linux MCP Server (SSE Daemon) for Agentic AI System Diagnostics
+Documentation=https://github.com/modelcontextprotocol/python-sdk
+After=network.target
+
+[Service]
+Type=simple
+User=mcpuser
+Group=mcpuser
+WorkingDirectory=/opt/linux-mcp
+
+# Thiết lập biến môi trường đảm bảo UTF-8 và unbuffered output
+Environment=PYTHONUNBUFFERED=1
+Environment=PATH=/home/mcpuser/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Khởi chạy server dưới dạng SSE Microservice Daemon lắng nghe tại 127.0.0.1:8000
+ExecStart=/home/mcpuser/.local/bin/uv run server.py --transport sse --host 127.0.0.1 --port 8000
+
+# Chính sách tự động khởi động lại nếu tiến trình gặp sự cố
+Restart=always
+RestartSec=5s
+
+# -------------------------------------------------------------
+# GIỚI HẠN TÀI NGUYÊN (Resource Control qua Linux Cgroups v2)
+# -------------------------------------------------------------
+# Giới hạn bộ nhớ tối đa là 512 MB, vượt quá sẽ kích hoạt OOM trên cgroup này
+MemoryMax=512M
+
+# Giới hạn thời gian sử dụng CPU tối đa là 50% của 1 core
+CPUQuota=50%
+
+# -------------------------------------------------------------
+# THIẾT LẬP BẢO MẬT & CÔ LẬP HỆ THỐNG (Systemd Hardening)
+# -------------------------------------------------------------
+# Bảo vệ hệ thống: /usr, /boot, /etc sẽ ở chế độ Read-Only đối với process
+ProtectSystem=full
+
+# Đặt thư mục /home ở chế độ chỉ đọc để ngăn chặn thay đổi dữ liệu người dùng
+ProtectHome=read-only
+
+# Cấp phát thư mục /tmp riêng biệt và biệt lập cho service
+PrivateTmp=true
+
+# Lưu ý bảo mật Linux: Cần đặt NoNewPrivileges=false để mcpuser có thể
+# thực thi lệnh 'sudo systemctl restart <service>' theo cấu hình trong sudoers
+NoNewPrivileges=false
+
+[Install]
+WantedBy=multi-user.target
