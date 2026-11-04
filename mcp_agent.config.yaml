@@ -1,16 +1,18 @@
+# Cấu hình Framework mcp-agent (Phương án A: Chuẩn Microservice Daemon qua SSE)
+# Đề tài: Build and Configure an MCP Server for Agentic AI in Linux
+
 execution_engine: "asyncio"
+
 logger:
   transports: [console, file]
   level: info
 
-openai:
-  default_model: "gemini-3.6-flash"
-
 mcp:
   servers:
     linux_system:
-      command: ".venv/bin/python"
-      args: ["-m", "servers.linux_server"]
+      name: "linux_system"
+      transport: "sse"
+      url: "http://127.0.0.1:8000/sse"
     fetch:
       command: "uvx"
       args: ["mcp-server-fetch"]
@@ -18,3 +20,5 @@ mcp:
       command: "npx"
       args: ["-y", "@modelcontextprotocol/server-filesystem", "."]
 
+openai:
+  default_model: "gemini-3.6-flash"

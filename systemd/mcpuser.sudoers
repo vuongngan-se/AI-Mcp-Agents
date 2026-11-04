@@ -1,0 +1,37 @@
+# ==============================================================================
+# File cấu hình phân quyền sudo cho user 'mcpuser'
+# Đường dẫn cài đặt trên Linux: /etc/sudoers.d/mcpuser
+# Quyền hạn tập tin bắt buộc: 0440 (chmod 0440 /etc/sudoers.d/mcpuser)
+# Nguyên tắc thiết kế: Least Privilege (Đặc quyền tối thiểu)
+# ==============================================================================
+
+# Định nghĩa danh sách các lệnh systemctl được phép thực thi không cần mật khẩu
+Cmnd_Alias MCP_SYSTEMCTL = /bin/systemctl status nginx, \
+                           /bin/systemctl status postgresql, \
+                           /bin/systemctl status redis-server, \
+                           /bin/systemctl is-active nginx, \
+                           /bin/systemctl is-active postgresql, \
+                           /bin/systemctl is-active redis-server, \
+                           /bin/systemctl restart nginx, \
+                           /bin/systemctl restart postgresql, \
+                           /bin/systemctl restart redis-server, \
+                           /usr/bin/systemctl status nginx, \
+                           /usr/bin/systemctl status postgresql, \
+                           /usr/bin/systemctl status redis-server, \
+                           /usr/bin/systemctl is-active nginx, \
+                           /usr/bin/systemctl is-active postgresql, \
+                           /usr/bin/systemctl is-active redis-server, \
+                           /usr/bin/systemctl restart nginx, \
+                           /usr/bin/systemctl restart postgresql, \
+                           /usr/bin/systemctl restart redis-server
+
+# Định nghĩa lệnh journalctl để đọc nhật ký các service này khi cần sudo
+Cmnd_Alias MCP_JOURNALCTL = /bin/journalctl -u nginx *, \
+                            /bin/journalctl -u postgresql *, \
+                            /bin/journalctl -u redis-server *, \
+                            /usr/bin/journalctl -u nginx *, \
+                            /usr/bin/journalctl -u postgresql *, \
+                            /usr/bin/journalctl -u redis-server *
+
+# Cấp quyền cho mcpuser: Chỉ chạy đúng các lệnh trong alias, không cần nhập password
+mcpuser ALL=(ALL) NOPASSWD: MCP_SYSTEMCTL, MCP_JOURNALCTL
